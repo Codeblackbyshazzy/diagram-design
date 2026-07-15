@@ -4,7 +4,11 @@
 
 ![Content site architecture](docs/screenshots/architecture.png)
 
-26 types. One Claude Code skill. Your brand in 60 seconds — the skill reads your website and maps colors + fonts to every diagram.
+![The self-improving loop](docs/screenshots/loop.png)
+
+*New in 2.0 — the Loop: flywheels with a shared-memory hub. The dashed lines are the write-backs.*
+
+27 types. One Claude Code skill. Your brand in 60 seconds — the skill reads your website and maps colors + fonts to every diagram.
 
 No Figma. No generic rounded boxes. No 30-minute color-picking sessions.
 
@@ -14,7 +18,7 @@ No Figma. No generic rounded boxes. No 30-minute color-picking sessions.
 
 I write at [littlemight.com](https://littlemight.com?utm_source=diagram-design&utm_medium=readme&utm_campaign=github&utm_content=intro) (and run [BestSelf.co](https://bestself.co?utm_source=diagram-design&utm_medium=readme&utm_campaign=github&utm_content=intro) on the side). Every time I needed a diagram — an architecture sketch, a flowchart, a pyramid of what matters most — I'd ask Claude and get back a generic rounded-box thing that looked nothing like the rest of the site. I'd either fight with Figma for 30 minutes or just skip the diagram.
 
-So I built a Claude Code skill for it. Twenty-six types, editorial quality, matches your brand in 60 seconds by reading your website.
+So I built a Claude Code skill for it. Twenty-seven types, editorial quality, matches your brand in 60 seconds by reading your website.
 
 > *The highest-quality move is usually deletion.* Every node earns its place. The accent color is reserved for the 1–2 things the reader should look at first. Target density: 4/10.
 
@@ -22,7 +26,7 @@ So I built a Claude Code skill for it. Twenty-six types, editorial quality, matc
 
 ## What it makes
 
-All 26 diagrams ship in three variants: minimal light, minimal dark, and full-editorial. Open any of them directly in a browser — no build step, no JS, no external images.
+All 27 diagrams ship in three variants: minimal light, minimal dark, and full-editorial. Open any of them directly in a browser — no build step, no JS, no external images.
 
 <table>
 <tr>
@@ -52,27 +56,32 @@ All 26 diagrams ship in three variants: minimal light, minimal dark, and full-ed
 </tr>
 <tr>
   <td align="center"><img src="docs/screenshots/radar.png" alt="Radar"><br><b>Radar / Spider</b><br><sub>Multi-axis comparison</sub></td>
+  <td align="center"><img src="docs/screenshots/loop.png" alt="Loop"><br><b>Loop</b><br><sub>Flywheel · stations around a hub</sub></td>
   <td align="center"><img src="docs/screenshots/it-state.png" alt="IT current-state"><br><b>IT current-state</b><br><sub>Legacy landscape · modernization</sub></td>
-  <td align="center"><img src="docs/screenshots/high-level.png" alt="High-Level"><br><b>High-Level</b><br><sub>End-to-end stack on a cluster</sub></td>
 </tr>
 <tr>
+  <td align="center"><img src="docs/screenshots/high-level.png" alt="High-Level"><br><b>High-Level</b><br><sub>End-to-end stack on a cluster</sub></td>
   <td align="center"><img src="docs/screenshots/bar.png" alt="Bar chart"><br><b>Bar chart</b><br><sub>Categorical comparison</sub></td>
   <td align="center"><img src="docs/screenshots/line.png" alt="Line chart"><br><b>Line chart</b><br><sub>Trends over time</sub></td>
-  <td align="center"><img src="docs/screenshots/gantt.png" alt="Gantt"><br><b>Gantt</b><br><sub>Tasks and phases on a timeline</sub></td>
 </tr>
 <tr>
+  <td align="center"><img src="docs/screenshots/gantt.png" alt="Gantt"><br><b>Gantt</b><br><sub>Tasks and phases on a timeline</sub></td>
   <td align="center"><img src="docs/screenshots/scatter.png" alt="Scatter plot"><br><b>Scatter plot</b><br><sub>Distribution and correlation</sub></td>
   <td align="center"><img src="docs/screenshots/process.png" alt="Process"><br><b>Process</b><br><sub>Multi-actor sequential workflow</sub></td>
-  <td align="center"><img src="docs/screenshots/medallion.png" alt="Medallion"><br><b>Medallion</b><br><sub>Multi-tier data storage</sub></td>
 </tr>
 <tr>
+  <td align="center"><img src="docs/screenshots/medallion.png" alt="Medallion"><br><b>Medallion</b><br><sub>Multi-tier data storage</sub></td>
   <td align="center"><img src="docs/screenshots/data-flow.png" alt="Data flow"><br><b>Data flow</b><br><sub>Role-scoped pipeline steps</sub></td>
   <td align="center"><img src="docs/screenshots/dp-integration.png" alt="DP integration"><br><b>DP integration</b><br><sub>Sources → core → consumers</sub></td>
+</tr>
+<tr>
   <td align="center"><img src="docs/screenshots/dp-security-matrix.png" alt="DP security matrix"><br><b>DP security matrix</b><br><sub>Per-role access permissions</sub></td>
+  <td></td>
+  <td></td>
 </tr>
 </table>
 
-**Browse the live gallery:** open [`skills/diagram-design/assets/index.html`](skills/diagram-design/assets/index.html) in your browser to flip through all 26 diagrams with light / dark / full-editorial tabs.
+**Browse the live gallery:** open [`skills/diagram-design/assets/index.html`](skills/diagram-design/assets/index.html) in your browser to flip through all 27 diagrams with light / dark / full-editorial tabs.
 
 ---
 
@@ -149,7 +158,7 @@ Before writing tokens, the skill verifies WCAG AA contrast on `ink` over `paper`
 
 ### Manual override
 
-Prefer to set tokens by hand? Open [`skills/diagram-design/references/style-guide.md`](skills/diagram-design/references/style-guide.md) and edit the table. Everything downstream reads from there — all 26 diagrams, the annotation primitive, and the gallery all inherit semantic role names (`accent`, not `#eb6c36`).
+Prefer to set tokens by hand? Open [`skills/diagram-design/references/style-guide.md`](skills/diagram-design/references/style-guide.md) and edit the table. Everything downstream reads from there — all 27 diagrams, the annotation primitive, and the gallery all inherit semantic role names (`accent`, not `#eb6c36`).
 
 ### First-run gate
 
@@ -164,7 +173,7 @@ See [`skills/diagram-design/references/onboarding.md`](skills/diagram-design/ref
 ## Quickstart
 
 ```bash
-# Open the gallery to see all 26 diagrams
+# Open the gallery to see all 27 diagrams
 open ~/.claude/skills/diagram-design/assets/index.html
 
 # In Claude Code, just ask:
@@ -235,16 +244,21 @@ diagram-design/
 ├── assets/
 │   ├── index.html                   — live gallery, tabbed
 │   ├── template*.html               — scaffolds for new diagrams
-│   ├── example-<type>.html          — 3 variants × 26 types
+│   ├── example-<type>.html          — 3 variants × 27 types
 │   └── example-quadrant-consultant.html  — consultant-special 2×2 scenario matrix
 └── docs/screenshots/                — the images in this README
 ```
 
-This keeps Claude's working context tight (only load what you need) and makes the skill easy to extend — drop a new `type-<name>.md` and wire it into the selection guide. The skill ships with 32 reference files covering every diagram type, primitive, and utility.
+This keeps Claude's working context tight (only load what you need) and makes the skill easy to extend — drop a new `type-<name>.md` and wire it into the selection guide. The skill ships with 33 reference files covering every diagram type, primitive, and utility.
+
+### Contributing / skin lint
+
+Before submitting a new example, run `python3 scripts/lint-skin.py <your-new-example.html>`.
+The repository-wide check `python3 scripts/lint-skin.py --all --baseline` must stay green.
 
 ### What loads when
 
-The top-level `SKILL.md` is always in context. Everything else is pulled in only when relevant — this is what keeps the skill fast even with 32 reference files.
+The top-level `SKILL.md` is always in context. Everything else is pulled in only when relevant — this is what keeps the skill fast even with 33 reference files.
 
 | You ask for… | Claude loads |
 |---|---|
@@ -253,7 +267,7 @@ The top-level `SKILL.md` is always in context. Everything else is pulled in only
 | "Onboard this skill to my site" | `SKILL.md` + `references/onboarding.md` + `references/style-guide.md` |
 | "Add an editorial callout to this diagram" | `SKILL.md` + `references/primitive-annotation.md` |
 | "Give me a hand-drawn version" | `SKILL.md` + `references/primitive-sketchy.md` |
-| Routine diagram-making (any of the 26 diagrams) | Only `SKILL.md` + that one type's reference |
+| Routine diagram-making (any of the 27 diagrams) | Only `SKILL.md` + that one type's reference |
 
 No matter how many types exist, Claude only reads the one you need. Add a new type tomorrow and nothing else changes.
 
